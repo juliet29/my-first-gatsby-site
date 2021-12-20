@@ -12,7 +12,7 @@
       "noUnusedLocals": true,
       "noUnusedParameters": true,
       "removeComments": false,
-       "baseUrl": "src"
+      "baseUrl": "src",
     },
-    "include": ["./src/**/*", "src", "root-wrapper.tsx"]
+    "include": ["./src/**/*", "src", "root-wrapper.tsx", "scss.d.ts"]
   }

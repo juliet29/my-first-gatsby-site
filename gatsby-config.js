@@ -7,6 +7,9 @@ module.exports = {
     "gatsby-plugin-root-import",
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sass`,
+    `typescript-plugin-css-modules`
+
   ],
 };

@@ -4,11 +4,12 @@ import LandingIndex from 'components/landing'
 
 
 
+
 // Step 2: Define your component
 const IndexPage = () => {
   return (
     <body>
-      <LandingIndex></LandingIndex>
+      <LandingIndex ></LandingIndex>
     </body>
      
     
