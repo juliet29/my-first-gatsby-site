@@ -14,5 +14,5 @@
       "removeComments": false,
       "baseUrl": "src",
     },
-    "include": ["./src/**/*", "src", "root-wrapper.tsx", "scss.d.ts"]
+    "include": ["./src/**/*", "src"]
   }

@@ -1,20 +1,23 @@
 // Step 1: Import React
 import * as React from 'react'
 import LandingIndex from 'components/landing'
+import mainTheme from 'styles/theme'
+import { ThemeProvider } from 'styled-components'
+import { GlobalStyle } from 'styles/theme';
 
 
 
-
-// Step 2: Define your component
 const IndexPage = () => {
   return (
-    <body>
-      <LandingIndex ></LandingIndex>
-    </body>
+      <ThemeProvider theme={mainTheme}>
+        <GlobalStyle/>
+          <LandingIndex></LandingIndex>
+      </ThemeProvider>
+  
      
-    
   )
 }
 
 // Step 3: Export your component
+
 export default IndexPage
