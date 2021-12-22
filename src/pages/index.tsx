@@ -3,7 +3,7 @@ import * as React from 'react'
 import LandingIndex from 'components/landing'
 import mainTheme from 'styles/theme'
 import { ThemeProvider } from 'styled-components'
-import { GlobalStyle } from 'styles/theme';
+import { GlobalStyle } from 'styles/globalStyles'
 
 
 

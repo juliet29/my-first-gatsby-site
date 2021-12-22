@@ -1,37 +1,71 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    padding: 20px;
-
-`;
-
-const H1 = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: ${props => props.theme.palette.white};
+    margin-bottom: 1em;
 `;
 
 const Line = styled.div`
     background-color: ${props => props.theme.palette.white};
-    height: 1px;
+    height: 0.05em;
+    /* margin: 1em 0; */
 `;
 
+const CenterDiv = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+`;
+
+const textAppearTopRightAnim = keyframes`
+    0% {
+        transform: translateY(1em) translateX(-1em);
+        transform-origin: 50% 50%;
+    }
+    100% {
+        color: darkblue;
+        transform: translateY(0) translateX(0);
+        transform-origin: 50% 50%;
+    }
+`
+
+const H1 = styled.h1`
+  /* display: contents; */
+  /*text-align: center; */
+  margin: 0;
+  letter-spacing: -0.5vw;
+  line-height: 0.9em;
+  font-size: 17vw;
+  @media (max-width: 768px) {
+    font-size: 15vw;
+  }
+  animation-name: ${textAppearTopRightAnim};
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: ${props => props.animationDelay}s; 
+  /* animation-iteration-count: infinite;*/
+`;
+
+
+
+
+const text = 'Daria' + "   " + 'Izbash';
+var textElements = text.split("").map(c => c);
 
 
 const Title = () => {
     return (
         <Wrapper>
             <Line></Line>
-            <H1>
-            Daria Izbash 
-            </H1>
+            <CenterDiv>
+            {textElements.map((e, ix) => <H1 animationDelay={ix/15}>{e}</H1>)}
+            </CenterDiv>
             <Line></Line>
         </Wrapper> 
-    );
-        
+    );       
 };
 
 export default Title;
