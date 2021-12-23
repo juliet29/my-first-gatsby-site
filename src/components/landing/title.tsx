@@ -20,15 +20,25 @@ const CenterDiv = styled.div`
 `;
 
 const textAppearTopRightAnim = keyframes`
-    0% {
-        transform: translateY(1em) translateX(-1em);
+0% {
+    transform: scale(0);
+    transform-origin: 0% 100%;
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    transform-origin: 0% 100%;
+    opacity: 1;
+  }
+    /* 0% {
+         transform: translateY(1em) ;
         transform-origin: 50% 50%;
     }
     100% {
         color: darkblue;
         transform: translateY(0) translateX(0);
         transform-origin: 50% 50%;
-    }
+    } */
 `
 
 const H1 = styled.h1`
@@ -42,7 +52,7 @@ const H1 = styled.h1`
     font-size: 15vw;
   }
   animation-name: ${textAppearTopRightAnim};
-  animation-duration: 0.5s;
+  animation-duration: 0.4s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
   animation-delay: ${props => props.animationDelay}s; 
@@ -61,7 +71,7 @@ const Title = () => {
         <Wrapper>
             <Line></Line>
             <CenterDiv>
-            {textElements.map((e, ix) => <H1 animationDelay={ix/15}>{e}</H1>)}
+            {textElements.map((e, ix) => <H1 animationDelay={ix/30}>{e}</H1>)}
             </CenterDiv>
             <Line></Line>
         </Wrapper> 
