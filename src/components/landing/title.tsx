@@ -40,8 +40,10 @@ const textAppearTopRightAnim = keyframes`
         transform-origin: 50% 50%;
     } */
 `
-
-const H1 = styled.h1`
+interface H1Props{
+    animationDelay: number;
+}
+const H1 = styled.h1<H1Props>`
   /* display: contents; */
   /*text-align: center; */
   margin: 0;

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { StaticImage } from "gatsby-plugin-image"
+// import { StaticImage } from "gatsby-plugin-image"
 import styled from 'styled-components';
 import { keyframes } from 'styled-components';
 
@@ -86,7 +86,7 @@ const Photos = () => {
               {scrollWidth}  
             </p> */}
             <ImageOverflowHidden>
-            <ImageWrapper height={scrollWidth}>
+            <ImageWrapper>
               
               <Image src="https://placekitten.com/400/600" 
               alt="A kitten"
