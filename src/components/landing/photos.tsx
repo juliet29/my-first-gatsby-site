@@ -5,7 +5,7 @@ import { keyframes } from 'styled-components';
 
 
 
-const PhotoSwitcher = () => {
+const PhotoSwitcher:React.FC<PhotosProps> = ({scrollWidth}) => {
     const [imageNumber, setImageNumber] = useState(0)
 
     useEffect(() => {
@@ -13,7 +13,7 @@ const PhotoSwitcher = () => {
            setImageNumber(imageNumber => imageNumber+1);
         }
  
-        const interval = setInterval(update, 2000);
+        const interval = setInterval(update, 5000);
  
         return () => clearInterval(interval);
      }, []);
@@ -28,7 +28,13 @@ const PhotoSwitcher = () => {
     console.log("imageNumber", imageNumber)
     console.log(currentImage)
     return (
-        <img src={currentImage}/>
+        <ImageAnimatorWrapper>
+              <Image src={currentImage} 
+              alt="A kitten"
+              width={400}
+              height={scrollWidth}
+              />
+      </ImageAnimatorWrapper>
     );
 };
 
@@ -92,14 +98,8 @@ interface PhotosProps {
 
     return (
         <Wrapper>
-            <PhotoSwitcher></PhotoSwitcher>
-            <ImageAnimatorWrapper>
-              <Image src="https://placekitten.com/400/800" 
-              alt="A kitten"
-              width={400}
-              height={scrollWidth}
-              />
-      </ImageAnimatorWrapper>
+            <PhotoSwitcher scrollWidth={scrollWidth}></PhotoSwitcher>
+            
   </Wrapper>
            
             
