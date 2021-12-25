@@ -4,6 +4,7 @@ import LandingIndex from 'components/landing'
 import mainTheme from 'styles/theme'
 import styled, { ThemeProvider } from 'styled-components'
 import { GlobalStyle } from 'styles/globalStyles'
+import AboutIndex from 'components/about';
 
 
 
@@ -55,6 +56,7 @@ const IndexPage = () => {
         <BackgroundColor lightBg={lightBg}>
           <GlobalStyle/>
           <LandingIndex scrollWidth={scrollWidth}></LandingIndex>
+          <AboutIndex></AboutIndex>
         </BackgroundColor>
       </ThemeProvider>
   

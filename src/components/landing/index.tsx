@@ -3,6 +3,7 @@ import Title from './title';
 import Subtitle from './subtitle';
 import Photos from './photos';
 import styled from 'styled-components';
+import { SectionSeperator } from 'styles/sharedStyles';
 
 const Section = styled.section`
   /* color: ${({ theme }) => theme.palette.white}; */
@@ -19,6 +20,7 @@ const LandingIndex:React.FC<LandingIndexProps> = ({scrollWidth}) => {
             <Title></Title>
             <Subtitle></Subtitle>
             <Photos scrollWidth={scrollWidth}></Photos>
+            <SectionSeperator></SectionSeperator>
         </Section>
         
     );

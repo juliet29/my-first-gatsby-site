@@ -20,6 +20,7 @@ body {
 h1, h2, p {
   /* Font minimum, preferred and maximum value */
   font-size: clamp(var(--min), var(--val), var(--max));
+  margin: 0;
 }
 
 /* Font size variables */
