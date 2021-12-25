@@ -4,11 +4,16 @@ import { darkColor, fontFamily } from './theme'
 export const GlobalStyle = createGlobalStyle`
 
 html {
-  background-color: ${darkColor};
+  /* background-color: ${darkColor}; */
   font-family: ${fontFamily};
   color: white;
-  padding: 20px;
+  /* margin: 20px; */
 
+}
+
+body {
+  margin: 0;
+  /* padding: 20px; */
 }
 
 /* Declare text styles */

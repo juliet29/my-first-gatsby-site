@@ -1,5 +1,5 @@
 // Step 1: Import React
-import React, {ReactNode, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import LandingIndex from 'components/landing'
 import mainTheme from 'styles/theme'
 import styled, { ThemeProvider } from 'styled-components'
@@ -14,9 +14,9 @@ interface BackgroundColorProps{
 const BackgroundColor = styled.html.attrs(props =>
   ({
     lightBg: props.lightBg 
-  })
-)<BackgroundColorProps>`
-  background-color: ${props => props.lightBg ? props.theme.palette.light : props.theme.palette.dark};
+  }))<BackgroundColorProps>`
+    background-color: ${props => props.lightBg ? props.theme.palette.light : props.theme.palette.dark};
+    padding: 20px;
 `;
 
 // export default BackgroundWrapper;
@@ -30,14 +30,13 @@ const IndexPage = () => {
     const handleScroll = () => {
         const position = window.pageYOffset;
         setScrollPosition(position);
-        console.log(position)
+        // console.log(position)
         setLightBg(position > 150 ? true : false)
         
     };
 
-    
-    console.log("scrollPosition", scrollPosition)
-    console.log(lightBg)
+    // console.log("scrollPosition", scrollPosition)
+    // console.log(lightBg)
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
@@ -53,7 +52,6 @@ const IndexPage = () => {
 
   return (
       <ThemeProvider theme={mainTheme}>
-       
         <BackgroundColor lightBg={lightBg}>
           <GlobalStyle/>
           <LandingIndex scrollWidth={scrollWidth}></LandingIndex>
