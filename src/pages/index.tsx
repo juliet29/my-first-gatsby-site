@@ -1,26 +1,26 @@
 // Step 1: Import React
 import React, {useEffect, useState} from 'react';
 import LandingIndex from 'components/landing'
-import mainTheme from 'styles/theme'
+import mainTheme, { darkColor, lightColor } from 'styles/theme'
 import styled, { ThemeProvider, keyframes } from 'styled-components'
 import { GlobalStyle } from 'styles/globalStyles'
 import AboutIndex from 'components/about';
 
 const ColorChange = keyframes`
   0% {
-    background-color: orangered;
+    background-color: ${darkColor};
   }
   100% {
-    background-color: blueviolet;
+    background-color: ${lightColor};
   }
 `;
 
 const NoColorChange = keyframes`
   0% {
-    background-color: blueviolet;
+    background-color: ${lightColor};
   }
   100% {
-    background-color: orangered;
+    background-color: ${darkColor};
   }
 `;
 

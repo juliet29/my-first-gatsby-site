@@ -7,6 +7,6 @@ export const VerticalFlexDiv = styled.div`
 `;
 
 export const SectionSeperator = styled.div`
-    height: 5em;
+    height: 10em;
   
 `;
