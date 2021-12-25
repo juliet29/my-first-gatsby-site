@@ -2,9 +2,27 @@
 import React, {useEffect, useState} from 'react';
 import LandingIndex from 'components/landing'
 import mainTheme from 'styles/theme'
-import styled, { ThemeProvider } from 'styled-components'
+import styled, { ThemeProvider, keyframes } from 'styled-components'
 import { GlobalStyle } from 'styles/globalStyles'
 import AboutIndex from 'components/about';
+
+const ColorChange = keyframes`
+  0% {
+    background-color: orangered;
+  }
+  100% {
+    background-color: blueviolet;
+  }
+`;
+
+const NoColorChange = keyframes`
+  0% {
+    background-color: blueviolet;
+  }
+  100% {
+    background-color: orangered;
+  }
+`;
 
 
 
@@ -16,15 +34,20 @@ const BackgroundColor = styled.html.attrs(props =>
   ({
     lightBg: props.lightBg 
   }))<BackgroundColorProps>`
-    background-color: ${props => props.lightBg ? props.theme.palette.light : props.theme.palette.dark};
+    /* background-color: ${props => props.lightBg ? props.theme.palette.light : props.theme.palette.dark}; */
+    animation-name: ${props => props.lightBg ? ColorChange : NoColorChange};
+    animation-duration: 0.8s;
+    animation-timing-function: cubic-bezier(0.455, 0.030, 0.515, 0.955) ;
+    animation-fill-mode: both;
     padding: 20px;
 `;
 
-// export default BackgroundWrapper;
 
 
 
 const IndexPage = () => {
+  // keep track of scroll pos 
+  // for changing background color + image zoom
   const [scrollPosition, setScrollPosition] = useState(0);
   const [lightBg, setLightBg] = useState(false)
     
@@ -35,9 +58,6 @@ const IndexPage = () => {
         setLightBg(position > 150 ? true : false)
         
     };
-
-    // console.log("scrollPosition", scrollPosition)
-    // console.log(lightBg)
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
@@ -64,6 +84,5 @@ const IndexPage = () => {
   )
 }
 
-// Step 3: Export your component
 
 export default IndexPage
