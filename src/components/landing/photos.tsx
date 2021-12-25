@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 // import { StaticImage } from "gatsby-plugin-image"
 import styled from 'styled-components';
 import { keyframes } from 'styled-components';
@@ -24,15 +24,6 @@ const ImageGrowAnim = keyframes`
 
 `;
 
-const ImageOverflowHidden = styled.div`
-    /* overflow: hidden;
-    /* display: flex;
-    justify-content: center; 
-    border: 10px solid green;
-    width: 400px;
-    height: 600px;*/
-  
-`;
 
 const ImageWrapper = styled.div`
     display: inline-block;
@@ -49,53 +40,29 @@ const ImageWrapper = styled.div`
     
 `;
 
-let scrollWidth;
+
 const Image = styled.img`
   height: 600px;
   transform: scale(${props => props.height});
 `;
 
 
+interface PhotosProps {
+    scrollWidth: number;
+ }
+ 
 
-
-
-
-const Photos = () => {
-    const [scrollPosition, setScrollPosition] = useState(0);
-    
-    const handleScroll = () => {
-        const position = window.pageYOffset;
-        setScrollPosition(position);
-    };
-
-    useEffect(() => {
-        window.addEventListener("scroll", handleScroll);
-
-        return () => {
-        window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
-
-    const defaultWidth = 700
-    scrollWidth =  1 + (defaultWidth + scrollPosition)/1000
-
+ const Photos:React.FC<PhotosProps> = ({scrollWidth}) => {
 
     return (
         <Wrapper>
-            {/* <p>
-              {scrollWidth}  
-            </p> */}
-            <ImageOverflowHidden>
             <ImageWrapper>
-              
-              <Image src="https://placekitten.com/400/600" 
+              <Image src="https://placekitten.com/400/800" 
               alt="A kitten"
               width={400}
               height={scrollWidth}
               />
-          
       </ImageWrapper>
-      </ImageOverflowHidden>
   </Wrapper>
            
             

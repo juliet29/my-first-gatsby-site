@@ -5,16 +5,20 @@ import Photos from './photos';
 import styled from 'styled-components';
 
 const Section = styled.section`
-  background-color: ${props => props.theme.palette.dark};
-  color: ${({ theme }) => theme.palette.white};
+  /* color: ${({ theme }) => theme.palette.white}; */
 `;
 
-const LandingIndex = () => {
+interface LandingIndexProps {
+   scrollWidth: number;
+}
+
+
+const LandingIndex:React.FC<LandingIndexProps> = ({scrollWidth}) => {
     return (
         <Section>
             <Title></Title>
             <Subtitle></Subtitle>
-            <Photos></Photos>
+            <Photos scrollWidth={scrollWidth}></Photos>
         </Section>
         
     );
