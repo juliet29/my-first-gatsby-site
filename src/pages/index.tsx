@@ -25,8 +25,6 @@ const NoColorChange = keyframes`
 `;
 
 
-
-
 interface BackgroundColorProps{
   lightBg: boolean;
 }
